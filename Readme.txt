@@ -1,0 +1,1 @@
+This will gonna be a server for battleship lan game.
