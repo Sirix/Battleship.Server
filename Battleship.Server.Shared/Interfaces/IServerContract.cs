@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ServiceModel;
-using Battleship.Server.Enums;
+using Battleship.Server.Shared.Enums;
 
-namespace Battleship.Server.Interfaces
+namespace Battleship.Server.Shared.Interfaces
 {
     [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof (IPlayerCallback))]
     public interface IServerContract

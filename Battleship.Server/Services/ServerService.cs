@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
-using Battleship.Server.Enums;
-using Battleship.Server.Interfaces;
+using Battleship.Server.Shared.Enums;
+using Battleship.Server.Shared.Interfaces;
 
 namespace Battleship.Server.Services
 {
@@ -46,7 +46,7 @@ namespace Battleship.Server.Services
             throw new NotImplementedException();
         }
 
-        public Enums.ShootResult Shoot(Guid playerId, int x, int y)
+        public ShootResult Shoot(Guid playerId, int x, int y)
         {
             throw new NotImplementedException();
         }

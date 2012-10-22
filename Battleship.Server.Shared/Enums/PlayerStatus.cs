@@ -1,4 +1,4 @@
-﻿namespace Battleship.Server.Enums
+﻿namespace Battleship.Server.Shared.Enums
 {
     public enum PlayerStatus
     {

@@ -1,4 +1,4 @@
-﻿using Battleship.Server.Interfaces;
+﻿using Battleship.Server.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

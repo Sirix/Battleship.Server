@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleship.Server", "Battleship.Server\Battleship.Server.csproj", "{100E3A3E-3B15-4806-91D1-A771FCD08222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleship.Server.Shared", "Battleship.Server.Shared\Battleship.Server.Shared.csproj", "{BFF4177A-21F6-46DD-9484-E32862A4300F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{100E3A3E-3B15-4806-91D1-A771FCD08222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{100E3A3E-3B15-4806-91D1-A771FCD08222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{100E3A3E-3B15-4806-91D1-A771FCD08222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF4177A-21F6-46DD-9484-E32862A4300F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF4177A-21F6-46DD-9484-E32862A4300F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF4177A-21F6-46DD-9484-E32862A4300F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF4177A-21F6-46DD-9484-E32862A4300F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
