@@ -1,4 +1,4 @@
-﻿namespace Battleship.Server.Shared.Enums
+﻿namespace Battleship.Server.Shared
 {
     public enum ShootResult
     {

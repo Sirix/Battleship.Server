@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
-using Battleship.Server.Shared.Enums;
-using Battleship.Server.Shared.Interfaces;
+using Battleship.Server.Shared;
 
 namespace Battleship.Server.Services
 {

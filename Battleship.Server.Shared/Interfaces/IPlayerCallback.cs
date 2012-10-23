@@ -1,7 +1,6 @@
 ﻿using System.ServiceModel;
-using Battleship.Server.Shared.Enums;
 
-namespace Battleship.Server.Shared.Interfaces
+namespace Battleship.Server.Shared
 {
     [ServiceContract]
     public interface IPlayerCallback
