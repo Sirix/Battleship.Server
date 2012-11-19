@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Battleship.Server" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Battleship.Server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ShootResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NonSpecified" />
+      <xs:enumeration value="Miss" />
+      <xs:enumeration value="Damaged" />
+      <xs:enumeration value="Destroyed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShootResult" nillable="true" type="tns:ShootResult" />
+  <xs:simpleType name="PlayerMessage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="YourTurn" />
+      <xs:enumeration value="EnemyTurn" />
+      <xs:enumeration value="YouWin" />
+      <xs:enumeration value="EnemyWin" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayerMessage" nillable="true" type="tns:PlayerMessage" />
+</xs:schema>

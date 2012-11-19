@@ -1,6 +1,6 @@
-﻿namespace Battleship.Server.Shared
+﻿namespace Battleship.Server
 {
-    public enum PlayerStatus
+    public enum PlayerMessage
     {
         None = 0,
         YourTurn = 1,

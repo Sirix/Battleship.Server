@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c563ba3c-fbaa-49ff-a766-fcebe3bbd687" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/BattleShip/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ec7ef02d-df1a-492e-ab7b-b7467ba6d2a3" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="29b79719-dcdd-404a-8bb9-7336dbffa15a" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="b5fa2497-e5a2-4caf-a729-b46ab02445dc" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+    <MetadataFile FileName="Battleship.Server.Shared.xsd" MetadataType="Schema" ID="6983a3f4-50b2-4553-94a2-fdcfcb41e0e3" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="a0bc57f8-f90c-4d3c-bd7c-a989a2abb5c7" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+    <MetadataFile FileName="Battleship.Server.xsd" MetadataType="Schema" ID="2cbdb6bd-d9ca-4b1c-97e5-2edb379c1b40" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
