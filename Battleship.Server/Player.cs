@@ -24,6 +24,8 @@ namespace Battleship.Server
             get { return IsReady && Ships.Any(s => !s.IsDestroyed); }
         }
 
+        public bool HisTurn { get; set; }
+
         public ShootResult ProcessShoot(int x, int y)
         {
             var cell = new Cell(x, y);

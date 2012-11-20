@@ -13,6 +13,7 @@ namespace Battleship.Server.Services
     public class ServerService : IServerContract
     {
         private List<Player> _players;
+        private bool _inGame;
 
         public ServerService()
         {
@@ -50,17 +51,23 @@ namespace Battleship.Server.Services
 
             if (_players.Count(p => p.IsReady) == 2)
             {
+                _inGame = true;
+                _players[0].HisTurn = true;
                 SendStatusToPlayer(_players[0], PlayerMessage.YourTurn);
+
+                _players[1].HisTurn = false;
                 SendStatusToPlayer(_players[1], PlayerMessage.EnemyTurn);
             }
         }
 
         public void LeaveGame(Guid playerId)
         {
+            if (!_inGame) return;
+
             var leavingPlayer = _players.FirstOrDefault(p => p.PlayerId == playerId);
 
             if (leavingPlayer == null)
-                ThrowHelper("Player with this name is not connected.");
+                return;
 
             SendStatusToPlayer(leavingPlayer, PlayerMessage.EnemyWin);
 
@@ -68,29 +75,62 @@ namespace Battleship.Server.Services
             SendStatusToPlayer(winner, PlayerMessage.YouWin);
 
             _players.Clear();
+            _inGame = false;
         }
 
         public ShootResult Shoot(Guid playerId, int x, int y)
         {
+            if (!_inGame) return ShootResult.NonSpecified;
+
             var player = _players.FirstOrDefault(p => p.PlayerId == playerId);
 
             if (player == null)
                 ThrowHelper("Player with this name is not connected.");
+
+            if (x < 0 || y < 0 || x > GameConfiguration.FieldSize - 1 || y > GameConfiguration.FieldSize - 1)
+            {
+                ThrowHelper(string.Format("-----------Nuclear launch detected by {0}", player.Name));
+            }
+            if(!player.HisTurn)
+            {
+                T("Player {0} tries to shoot in not his turn..Waiting", player.Name);
+                while (!player.HisTurn)
+                    Thread.Sleep(100);
+            }
 
             var secondPlayer = _players.First(p => p.PlayerId != player.PlayerId);
 
             var result = secondPlayer.ProcessShoot(x, y);
 
             InformAboutShoot(secondPlayer, x, y, result);
-            if (result == ShootResult.Damaged || result == ShootResult.Destroyed)
+            if (secondPlayer.IsAlive)
             {
-                SendStatusToPlayer(player, PlayerMessage.YourTurn);
-                SendStatusToPlayer(secondPlayer, PlayerMessage.EnemyTurn);
+                if (result == ShootResult.Damaged || result == ShootResult.Destroyed)
+                {
+                    player.HisTurn = true;
+                    SendStatusToPlayer(player, PlayerMessage.YourTurn);
+
+                    secondPlayer.HisTurn = false;
+                    SendStatusToPlayer(secondPlayer, PlayerMessage.EnemyTurn);
+                }
+                else
+                {
+                    player.HisTurn = false;
+                    SendStatusToPlayer(player, PlayerMessage.EnemyTurn);
+
+                    secondPlayer.HisTurn = true;
+                    SendStatusToPlayer(secondPlayer, PlayerMessage.YourTurn);
+                }
             }
             else
             {
-                SendStatusToPlayer(player, PlayerMessage.EnemyTurn);
-                SendStatusToPlayer(secondPlayer, PlayerMessage.YourTurn);
+                player.HisTurn = secondPlayer.HisTurn = false;
+
+                SendStatusToPlayer(player, PlayerMessage.YouWin);
+                SendStatusToPlayer(secondPlayer, PlayerMessage.EnemyWin);
+
+                _inGame = false;
+                _players.Clear();
             }
             return result;
         }
@@ -105,18 +145,24 @@ namespace Battleship.Server.Services
         private void SendStatusToPlayer(Player player, PlayerMessage status)
         {
             T("Sending to {0} message {1}", player.Name, status);
-            //   player.CallBack.ProcessMessage(status);
 
-            ThreadStart action = () => player.CallBack.ProcessMessage(status);
+            ThreadStart action = () =>
+                                     {
+                                         Thread.Sleep(500);
+                                         player.CallBack.ProcessMessage(status);
+                                     };
             new Thread(action).Start();
         }
 
         private void InformAboutShoot(Player player, int x, int y, ShootResult result)
         {
             T("Informing {0} about enemy shoot {1} {2} {3}", player.Name, x, y, result);
-            // player.CallBack.InformAboutShoot(x, y, result);
 
-            ThreadStart action = () => player.CallBack.InformAboutShoot(x, y, result);
+            ThreadStart action = () =>
+                                     {
+                                         Thread.Sleep(500);
+                                         player.CallBack.InformAboutShoot(x, y, result);
+                                     };
             new Thread(action).Start();
         }
 
