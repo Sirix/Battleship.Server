@@ -17,6 +17,7 @@ namespace Battleship.Server
                     ServerService.T("Started!");
                     Console.WriteLine("[{0}] Battleship Server is started", DateTime.Now.ToLongTimeString());
                     Console.WriteLine("Work at {0}", host.BaseAddresses[0]);
+                   
                     Console.WriteLine("Press <Enter> to stop the service.");
                     Console.ReadLine();
 
