@@ -69,6 +69,8 @@ namespace Battleship.Server.Services
             if (leavingPlayer == null)
                 return;
 
+            T("Player {0} leaves..", leavingPlayer.Name);
+
             SendStatusToPlayer(leavingPlayer, PlayerMessage.EnemyWin);
 
             var winner = _players.First(p => p.PlayerId != leavingPlayer.PlayerId);
@@ -148,7 +150,7 @@ namespace Battleship.Server.Services
 
             ThreadStart action = () =>
                                      {
-                                         Thread.Sleep(500);
+                                         Thread.Sleep(250);
                                          player.CallBack.ProcessMessage(status);
                                      };
             new Thread(action).Start();
@@ -160,7 +162,7 @@ namespace Battleship.Server.Services
 
             ThreadStart action = () =>
                                      {
-                                         Thread.Sleep(500);
+                                         Thread.Sleep(250);
                                          player.CallBack.InformAboutShoot(x, y, result);
                                      };
             new Thread(action).Start();

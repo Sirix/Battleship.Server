@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c563ba3c-fbaa-49ff-a766-fcebe3bbd687" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="860d3806-1eae-4cbf-b8e0-1ec95de892c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8732/BattleShip/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:8744/Battleship/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ec7ef02d-df1a-492e-ab7b-b7467ba6d2a3" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="29b79719-dcdd-404a-8bb9-7336dbffa15a" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="b5fa2497-e5a2-4caf-a729-b46ab02445dc" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
-    <MetadataFile FileName="Battleship.Server.Shared.xsd" MetadataType="Schema" ID="6983a3f4-50b2-4553-94a2-fdcfcb41e0e3" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="a0bc57f8-f90c-4d3c-bd7c-a989a2abb5c7" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
-    <MetadataFile FileName="Battleship.Server.xsd" MetadataType="Schema" ID="2cbdb6bd-d9ca-4b1c-97e5-2edb379c1b40" SourceId="1" SourceUrl="http://localhost:8732/BattleShip/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="2ee4a046-0e58-4dc8-bdaf-ac95a759de54" SourceId="1" SourceUrl="net.tcp://localhost:8744/Battleship/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f4a61376-17f7-4beb-baff-137bea1e4f6e" SourceId="1" SourceUrl="net.tcp://localhost:8744/Battleship/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="62d53bc9-6958-48e3-ac1b-5451397b2a8e" SourceId="1" SourceUrl="net.tcp://localhost:8744/Battleship/mex" />
+    <MetadataFile FileName="Battleship.Server.Shared.xsd" MetadataType="Schema" ID="6253f1fb-f671-4a05-9593-a3f715622da4" SourceId="1" SourceUrl="net.tcp://localhost:8744/Battleship/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="e6d53842-4873-44d1-9fa3-b4284e835a27" SourceId="1" SourceUrl="net.tcp://localhost:8744/Battleship/mex" />
+    <MetadataFile FileName="Battleship.Server.xsd" MetadataType="Schema" ID="ff206163-d664-48e8-aef9-0b80f15f20b1" SourceId="1" SourceUrl="net.tcp://localhost:8744/Battleship/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
