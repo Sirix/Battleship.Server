@@ -4,6 +4,9 @@ using Battleship.Server.Shared.BattleShipServerClient;
 
 namespace Battleship.Server.Shared
 {
+    /// <summary>
+    /// This class holds events, raised by server to inform players about enemy or server actions/
+    /// </summary>
     [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, UseSynchronizationContext = false)]
     public class ClientCallback : IServerContractCallback
     {
@@ -12,7 +15,7 @@ namespace Battleship.Server.Shared
         /// </summary>
         public event Action<PlayerMessage> OnServerMessage;
         /// <summary>
-        /// Invokes when enemy palyer has shot on field of this player.
+        /// Raised when enemy palyer has shot on field of this player.
         /// </summary>
         public event Action<int, int, ShootResult> OnEnemyShoot;
 
